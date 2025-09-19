@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мстители - Кинематографическая вселенная Marvel</title>
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="reset.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0c0c18;
+            color: #f0f0f0;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(204, 0, 0, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(240, 196, 25, 0.1) 0%, transparent 40%);
+        }
+        
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: rgba(15, 15, 30, 0.95);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
+            border: 1px solid #33334d;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .main-container::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #cc0000, #f0c419, #cc0000);
+            z-index: 10;
+        }
+        
+        nav {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #33334d;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        nav li {
+            margin: 0 15px;
+        }
+        
+        nav a {
+            color: #f0c419;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: #cc0000;
+            text-shadow: 0 0 5px #cc0000;
+        }
+
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .main-header {
+            text-align: center;
+            padding: 40px 0;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .main-header h1 {
+            font-size: 4rem;
+            color: #f0c419;
+            text-shadow: 0 0 10px rgba(240, 196, 25, 0.7), 
+                         0 0 20px rgba(204, 0, 0, 0.5);
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .main-header h1::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 3px;
+            background: linear-gradient(to right, transparent, #cc0000, transparent);
+        }
+        
+        .main-header p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 800px;
+            margin: 0 auto;
+            font-style: italic;
+        }
+
+        .content-section {
+            margin-bottom: 60px;
+            padding: 30px;
+            background: linear-gradient(to right, rgba(26, 26, 46, 0.7), rgba(15, 15, 30, 0.7));
+
+        }
+        
+        .content-section h2 {
+            font-size: 2.5rem;
+            color: #f0c419;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .float-img {
+            float: left;
+            margin: 0 20px 20px 0;
+            max-width: 40%;
+            border-radius: 8px;
+            border: 2px solid #f0c419;
+        }
+        
+        .float-right {
+            float: right;
+            margin: 0 0 20px 20px;
+        }
+    
+        .movies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .movie-card {
+            background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(15, 15, 30, 0.8));
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            border: 2px solid #f0c419;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(240, 196, 25, 0.3);
+
+        }
+        
+        .movie-card h4 {
+            font-size: 1.4rem;
+            color: #f0c419;
+            margin-bottom: 10px;
+        }
+        
+        .movie-card p {
+            color: #cccccc;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+        
+        .movie-poster {
+            width: 100%;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 2px solid #33334d;
+        }
+        
+        .movies-counter {
+            text-align: center;
+            padding: 40px;
+            background: linear-gradient(to right, rgba(26, 26, 46, 0.7), rgba(15, 15, 30, 0.7));
+            border-radius: 10px;
+            border-left: 5px solid #cc0000;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .movies-counter h2 {
+            font-size: 2rem;
+            color: #f0c419;
+            margin-bottom: 20px;
+        }
+        
+        .counter-number {
+            font-size: 5rem;
+            font-weight: bold;
+            color: #f0c419;
+            text-shadow: 0 0 15px rgba(240, 196, 25, 0.7);
+            display: block;
+            margin: 15px 0;
+            position: relative;
+        }
+        
+        .movies-counter p {
+            color: #cccccc;
+            font-size: 1.2rem;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.7;
+            text-align: justify;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            padding: 30px;
+            border-top: 1px solid #33334d;
+            position: relative;
+            width: 100%;
+        }
+        
+        footer p {
+            color: #cccccc;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .marvel-logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #cc0000;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-top: 20px;
+        }
+        
+        footer a {
+            color: #f0c419;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        footer a:hover {
+            color: #cc0000;
+            text-decoration: underline;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <nav>
+            <ul>
+                <li><a href="index1.html">Главная</a></li>
+                <li><a href="about.html">Мстители</a></li>
+            </ul>
+        </nav>
+
+        <header class="main-header">
+            <h1>МСТИТЕЛИ</h1>
+            <p>Самая могущественная героическая команда в кинематографической вселенной Marvel</p>
+        </header>
+
+        <section class="content-section clearfix">
+            <h2>О Мстителях</h2>
+            
+            <img src="C:\Users\chiku\OneDrive\Рабочий стол\web2\Снимок экрана 2025-09-18 234520.png" alt="Команда Мстителей" class="float-img">
+            <div id="intro">Мстители — команда супергероев из комиксов издательства Marvel Comics. В киновселенной Marvel Мстители являются центральной командой, собравшей самых могущественных героев Земли для защиты от угроз, слишком крупных для кого-то одного.</div>
+            <p style="color:#f0c419; font-weight:bold;">Созданные Стэном Ли и Джеком Кирби в 1963 году, Мстители прошли долгий путь от комиксов к большому экрану, став одним из самых успешных кинопроектов в истории.</p>
+            
+            <p>Первое собрание Мстителей состоялось, когда Локи попытался захватить мир с помощью обмана и манипуляций. Тор, Железный человек, Халк, а также Чудо-женщина и Человек-муравей объединились, чтобы остановить его.</p>
+            
+            <p>За время своего существования состав команды многократно менялся, но её основная цель всегда оставалась неизменной — защищать Землю от любых угроз.</p>
+        </section>
+
+        <div class="movies-counter">
+            <h2>Всего фильмов о Мстителях</h2>
+            <span class="counter-number">33</span>
+            <p>Включая сольные фильмы о членах команды и кроссоверы</p>
+        </div>
+        
+        <section class="content-section">
+            <h2>Основная квадрология</h2>
+            
+            <div class="movies-grid">
+                <div class="movie-card">
+                    <img src="C:\Users\chiku\OneDrive\Рабочий стол\web2\мстители11.jpg" alt="Мстители (2012)" class="movie-poster">
+                    <h4>Мстители (2012)</h4>
+                    <p>Первое собрание легендарной команды под руководством Ника Фьюри для противодействия Локи и его армии.</p>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="C:\Users\chiku\OneDrive\Рабочий стол\web2\мстители2.jpg" alt="Мстители: Эра Альтрона (2015)" class="movie-poster">
+                    <h4>Мстители: Эра Альтрона (2015)</h4>
+                    <p>Мстители сталкиваются с Альтроном — искусственным интеллектом, созданным для защиты мира, но решившим его уничтожить.</p>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="C:\Users\chiku\OneDrive\Рабочий стол\web2\мстители33.jpg" alt="Мстители: Война бесконечности (2018)" class="movie-poster">
+                    <h4>Мстители: Война бесконечности (2018)</h4>
+                    <p>Танос собирает все шесть Камней Бесконечности, чтобы осуществить свой план по уничтожению половины вселенной.</p>
+                </div>
+                
+                <div class="movie-card">
+                    <img src="C:\Users\chiku\OneDrive\Рабочий стол\web2\мстители4.jpg" alt="Мстители: Финал (2019)" class="movie-poster">
+                    <h4>Мстители: Финал (2019)</h4>
+                    <p>Оставшиеся в живых Мстители пытаются исправить последствия щелчка Таноса и вернуть погибших.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section clearfix">
+            <h2>Ключевые участники команды</h2>
+
+            <p>За время существования команды в её составе было множество героев, но основу всегда составляли несколько ключевых персонажей:</p>
+            
+            <ul>
+                <li>Железный человек (Тони Старк) - гениальный изобретатель и лидер команды</li>
+                <li>Капитан Америка (Стив Роджерс) - стратег и моральный компас команды</li>
+                <li>Тор - бог грома из Асгарда</li>
+                <li>Халк (Брюс Бэннер) - ученый с силой невероятной физической мощи</li>
+                <li>Чёрная вдова (Наташа Романофф) - высококвалифицированный шпион и специалист по рукопашному бою</li>
+                <li>Соколиный глаз (Клинт Бартон) - мастер стрельбы из лука</li>
+            </ul>
+            
+            <p>Позже к команде присоединились многие другие герои, включая Скорпиона, Чёрную пантеру, Доктора Стрэнджа и Капитана Марвел.</p>
+        </section>
+
+        <footer>
+            <p>Design by Chikurova Daria ©</p>
+            <p>2025 Marvel World | <a href=https://www.marvel.com/teams-and-groups/avengers>Написать нам</a></p>
+            <div class="marvel-logo">MARVEL STUDIOS</div>
+        </footer>
+    </div>
+</body>
+</html>
