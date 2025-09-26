@@ -1,0 +1,204 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #33334d;
+}
+
+nav ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+nav li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: #f0c419;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: #cc0000;
+}
+
+.clearfix {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.main-header {
+    text-align: center;
+    padding: 40px 0;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.main-header h1 {
+    font-size: 4rem;
+    color: #f0c419;
+    margin-bottom: 20px;
+    letter-spacing: 4px;
+    font-weight: bold;
+}
+
+.main-header p {
+    font-size: 1.2rem;
+    color: #cccccc;
+    max-width: 800px;
+    margin: 0 auto;
+    font-style: italic;
+}
+
+.content-section,
+.character-section {
+    margin-bottom: 60px;
+    padding: 30px;
+    background: linear-gradient(to right, rgba(26, 26, 46, 0.7), rgba(15, 15, 30, 0.7));
+}
+
+.content-section h2,
+.character-section h2 {
+    font-size: 2.5rem;
+    color: #f0c419;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    display: block;
+}
+
+.float-img {
+    float: left;
+    margin: 0 20px 20px 0;
+    max-width: 30%;
+    border-radius: 8px;
+    border: 2px solid #f0c419;
+}
+
+.float-right,
+.character-image {
+    float: right;
+    margin: 0 0 20px 20px;
+    width: 220px;
+    margin-left: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    border: 2px solid #f0c419;
+}
+
+.character-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+.text-content p {
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    line-height: 1.7;
+    text-align: justify;
+}
+
+.movies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 30px 0;
+}
+
+.movie-card {
+    background: linear-gradient(135deg, rgba(26, 26, 46, 0.8), rgba(15, 15, 30, 0.8));
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    border: 2px solid #f0c419;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.movie-card h4 {
+    font-size: 1.4rem;
+    color: #f0c419;
+    margin-bottom: 10px;
+}
+
+.movie-poster {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+.movies-counter {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(to right, rgba(26, 26, 46, 0.7), rgba(15, 15, 30, 0.7));
+    border-radius: 10px;
+    margin: 40px 0;
+    position: relative;
+}
+
+.movies-counter h2 {
+    font-size: 2rem;
+    color: #f0c419;
+    margin-bottom: 20px;
+}
+
+.counter-number {
+    font-size: 5rem;
+    font-weight: bold;
+    color: #f0c419;
+    position: relative;
+}
+
+footer {
+    text-align: center;
+    margin-top: 60px;
+    padding: 30px;
+    border-top: 1px solid #33334d;
+    position: relative;
+    width: 100%;
+}
+
+.marvel-logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #cc0000;
+}
+
+footer a {
+    color: #f0c419;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #cc0000;
+    text-decoration: none;
+}
+
+#intro {
+    font-style: italic;
+    border-bottom: 2px solid #f0c419;
+    padding-bottom: 10px;
+}
